@@ -1,4 +1,4 @@
-package co.arrk.test;
+package co.kishor.sample;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

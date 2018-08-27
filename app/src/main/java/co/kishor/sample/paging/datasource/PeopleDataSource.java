@@ -1,13 +1,13 @@
-package co.arrk.test.datasource;
+package co.kishor.sample.paging.datasource;
 
 import android.arch.paging.PageKeyedDataSource;
+import android.content.Context;
 import android.support.annotation.NonNull;
 import android.util.Log;
-import android.widget.Toast;
 
-import co.arrk.test.models.People;
-import co.arrk.test.models.Result;
-import co.arrk.test.webservices.SWApiFactory;
+import co.kishor.sample.paging.models.People;
+import co.kishor.sample.paging.models.Result;
+import co.kishor.sample.paging.rest.SWApiFactory;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -19,7 +19,7 @@ public class PeopleDataSource extends PageKeyedDataSource<Integer, Result> {
     private static final int FIRST_PAGE = 1;
     //the size of a page that we want
     public static final int PAGE_SIZE = 9;
-
+    private Context mContext;
 
     //this will be called once to load the initial data
     @Override
@@ -85,20 +85,20 @@ public class PeopleDataSource extends PageKeyedDataSource<Integer, Result> {
                             //if the response has next page
                             //incrementing the next page number
 
-                            if(response.body().getNext() != null) {
+//                            if(response.body().getNext() != null) {
                                 Integer key = params.key + 1;
 
                                 //passing the loaded data and next page value
                                 callback.onResult(response.body().getResults(), key);
-                            } else {
-                                Log.e(mLOGTAG, "loadAfter next is null");
-                            }
+    //                            } else {
+    //                                Log.e(mLOGTAG, "loadAfter next is null");
+    //                            }
                         }
                     }
 
                     @Override
                     public void onFailure(Call<People> call, Throwable t) {
-
+                        Log.e(mLOGTAG, t.getMessage());
                     }
                 });
 

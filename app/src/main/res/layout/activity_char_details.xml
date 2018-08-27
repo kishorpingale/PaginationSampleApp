@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:background="@color/colorBackground">
+
+    <TextView
+        android:id="@+id/textView_acd_lbl_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/char_name_lbl"
+        android:layout_margin="10dp"
+        style="@style/DataLabelText"/>
+
+    <TextView
+        android:id="@+id/textView_acd_char_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:layout_margin="10dp"
+        style="@style/DataValueText"/>
+
+    <TextView
+        android:id="@+id/textView_acd_lbl_height"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/char_height_lbl"
+        android:layout_margin="10dp"
+        style="@style/DataLabelText"/>
+
+    <TextView
+        android:id="@+id/textView_acd_char_height"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:layout_margin="10dp"
+        style="@style/DataValueText"/>
+
+    <TextView
+        android:id="@+id/textView_acd_lbl_mass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/char_mass_lbl"
+        android:layout_margin="10dp"
+        style="@style/DataLabelText"/>
+
+    <TextView
+        android:id="@+id/textView_acd_char_mass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:layout_margin="10dp"
+        style="@style/DataValueText"/>
+
+    <TextView
+        android:id="@+id/textView_acd_lbl_created"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/char_date_created_lbl"
+        android:layout_margin="10dp"
+        style="@style/DataLabelText"/>
+
+    <TextView
+        android:id="@+id/textView_acd_char_createdDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:layout_margin="10dp"
+        style="@style/DataValueText"/>
+</LinearLayout>

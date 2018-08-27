@@ -1,4 +1,4 @@
-package co.arrk.test;
+package co.kishor.sample;
 
 import org.junit.Test;
 

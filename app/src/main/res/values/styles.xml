@@ -4,5 +4,20 @@
     <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
         <!-- Customize your theme here. -->
     </style>
+    
+    <style name="DataValueText" parent="Theme.AppCompat">
+        <item name="android:textColor">@color/colorDataText</item>
+        <item name="android:textSize">21sp</item>
+    </style>
+
+    <style name="DataLabelText" parent="Theme.AppCompat">
+        <item name="android:textColor">@color/colorLblText</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="CharacterNameListText" parent="Theme.AppCompat">
+        <item name="android:textColor">@color/colorListItemText</item>
+        <item name="android:textSize">21sp</item>
+    </style>
 
 </resources>

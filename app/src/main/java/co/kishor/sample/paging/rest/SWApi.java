@@ -1,6 +1,6 @@
-package co.arrk.test.webservices;
+package co.kishor.sample.paging.rest;
 
-import co.arrk.test.models.People;
+import co.kishor.sample.paging.models.People;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;

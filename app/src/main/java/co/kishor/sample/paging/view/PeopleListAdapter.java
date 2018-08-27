@@ -1,4 +1,4 @@
-package co.arrk.test.view;
+package co.kishor.sample.paging.view;
 
 import android.arch.paging.PagedListAdapter;
 import android.content.Context;
@@ -11,24 +11,27 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import co.arrk.test.R;
-import co.arrk.test.models.Result;
+import co.kishor.sample.paging.R;
+import co.kishor.sample.paging.listeners.RecyclerViewClickListener;
+import co.kishor.sample.paging.models.Result;
 
 public class PeopleListAdapter extends PagedListAdapter<Result, PeopleListAdapter.PeopleViewHolder> {
 
     private final String mLOGTAG = PeopleListAdapter.class.getSimpleName();
     private Context mContext;
+    private RecyclerViewClickListener mViewClickListener;
 
-    public PeopleListAdapter(Context paraContext) {
+    public PeopleListAdapter(Context paraContext, RecyclerViewClickListener viewClickListener) {
         super(DIFF_CALLBACK);
         mContext = paraContext;
+        mViewClickListener = viewClickListener;
     }
 
     @NonNull
     @Override
     public PeopleViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(mContext).inflate(R.layout.recyclerview_people, parent, false);
-        return new PeopleViewHolder(view);
+        return new PeopleViewHolder(view, mViewClickListener);
     }
 
     @Override
@@ -54,13 +57,25 @@ public class PeopleListAdapter extends PagedListAdapter<Result, PeopleListAdapte
         }
     };
 
-    public class PeopleViewHolder extends RecyclerView.ViewHolder {
+    public class PeopleViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView textView;
+        RecyclerViewClickListener mViewClickListener;
 
-        public PeopleViewHolder(View peopleView) {
+        public PeopleViewHolder(View peopleView, RecyclerViewClickListener viewClickListener) {
             super(peopleView);
+            mViewClickListener = viewClickListener;
+            textView = peopleView.findViewById(R.id.textViewName);
+            peopleView.setOnClickListener(this);
+        }
 
-            textView = (TextView) peopleView.findViewById(R.id.textViewName);
+        @Override
+        public void onClick(View v) {
+            int position = getAdapterPosition();
+
+            if(position != RecyclerView.NO_POSITION) {
+                Result result = getItem(position);
+                mViewClickListener.onClick(v, position, result);
+            }
         }
     }
 }

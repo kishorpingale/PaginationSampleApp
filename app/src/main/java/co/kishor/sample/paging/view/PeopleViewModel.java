@@ -1,4 +1,4 @@
-package co.arrk.test.view;
+package co.kishor.sample.paging.view;
 
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.ViewModel;
@@ -6,9 +6,9 @@ import android.arch.paging.LivePagedListBuilder;
 import android.arch.paging.PageKeyedDataSource;
 import android.arch.paging.PagedList;
 
-import co.arrk.test.datasource.PeopleDataSource;
-import co.arrk.test.datasource.PeopleDataSourceFactory;
-import co.arrk.test.models.Result;
+import co.kishor.sample.paging.datasource.PeopleDataSource;
+import co.kishor.sample.paging.datasource.PeopleDataSourceFactory;
+import co.kishor.sample.paging.models.Result;
 
 public class PeopleViewModel extends ViewModel {
 

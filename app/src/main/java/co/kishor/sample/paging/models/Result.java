@@ -1,10 +1,13 @@
-package co.arrk.test.models;
+package co.kishor.sample.paging.models;
+
+import android.os.Parcel;
+import android.os.Parcelable;
 
 import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Result {
+public class Result implements Parcelable{
 
     @SerializedName("name")
     @Expose
@@ -54,6 +57,37 @@ public class Result {
     @SerializedName("url")
     @Expose
     private String url;
+
+    protected Result(Parcel in) {
+        name = in.readString();
+        height = in.readString();
+        mass = in.readString();
+        hairColor = in.readString();
+        skinColor = in.readString();
+        eyeColor = in.readString();
+        birthYear = in.readString();
+        gender = in.readString();
+        homeworld = in.readString();
+        films = in.createStringArrayList();
+        species = in.createStringArrayList();
+        vehicles = in.createStringArrayList();
+        starships = in.createStringArrayList();
+        created = in.readString();
+        edited = in.readString();
+        url = in.readString();
+    }
+
+    public static final Creator<Result> CREATOR = new Creator<Result>() {
+        @Override
+        public Result createFromParcel(Parcel in) {
+            return new Result(in);
+        }
+
+        @Override
+        public Result[] newArray(int size) {
+            return new Result[size];
+        }
+    };
 
     public String getName() {
         return name;
@@ -183,4 +217,28 @@ public class Result {
         this.url = url;
     }
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(name);
+        dest.writeString(height);
+        dest.writeString(mass);
+        dest.writeString(hairColor);
+        dest.writeString(skinColor);
+        dest.writeString(eyeColor);
+        dest.writeString(birthYear);
+        dest.writeString(gender);
+        dest.writeString(homeworld);
+        dest.writeStringList(films);
+        dest.writeStringList(species);
+        dest.writeStringList(vehicles);
+        dest.writeStringList(starships);
+        dest.writeString(created);
+        dest.writeString(edited);
+        dest.writeString(url);
+    }
 }

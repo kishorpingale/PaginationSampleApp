@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">ArrkTest</string>
+    <string name="app_name">PagingSampleApp</string>
+    <string name="char_name_lbl">Name</string>
+    <string name="char_height_lbl">Height in meters</string>
+    <string name="char_mass_lbl">Mass in kg</string>
+    <string name="char_date_created_lbl">Created Date</string>
 </resources>

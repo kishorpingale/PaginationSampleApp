@@ -1,4 +1,4 @@
-package co.arrk.test.view;
+package co.kishor.sample.paging.view;
 
 import android.content.Context;
 import android.net.ConnectivityManager;

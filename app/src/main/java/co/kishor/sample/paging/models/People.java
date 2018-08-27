@@ -1,5 +1,5 @@
 
-package co.arrk.test.models;
+package co.kishor.sample.paging.models;
 
 import java.util.List;
 import com.google.gson.annotations.Expose;
