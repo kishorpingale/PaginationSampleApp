@@ -11,8 +11,6 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import co.kishor.sample.paging.R;
 import co.kishor.sample.paging.listeners.RecyclerViewClickListener;
@@ -21,7 +19,6 @@ import co.kishor.sample.paging.util.Constant;
 
 public class MainActivity extends BaseActivity{
 
-//    public final String mLOGTAG = MainActivity.class.getSimpleName();
     private RecyclerView recyclerView;
 
     @Override
@@ -45,12 +42,8 @@ public class MainActivity extends BaseActivity{
             RecyclerViewClickListener listener = new RecyclerViewClickListener() {
                 @Override
                 public void onClick(View view, int position, Result result) {
-//                    String characterName = ((TextView) view.findViewById(R.id.textViewName)).getText().toString();
-//                    Toast.makeText(MainActivity.this, "Position " + position
-//                            + " Character Name " + characterName, Toast.LENGTH_SHORT).show();
 
                     Intent characterDetails = new Intent(MainActivity.this, CharacterDetailsActivity.class);
-//                    characterDetails.putExtra(Constant.SELECTED_CHARACTER_POSITION, position);
                     characterDetails.putExtra(Constant.SELECTED_CHARACTER_POSITION, result);
                     startActivity(characterDetails);
                 }

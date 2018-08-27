@@ -2,7 +2,6 @@ package co.kishor.sample.paging.view;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.widget.TextView;
 
 import java.text.ParseException;
@@ -15,8 +14,6 @@ import co.kishor.sample.paging.util.Constant;
 
 public class CharacterDetailsActivity extends BaseActivity {
 
-    private final String mLOGTAG = CharacterDetailsActivity.class.getSimpleName();
-//    private int selectedItemPos = -1;
     private TextView nameTextView, heightTextView, massTextView, createdTextView;
 
     @Override
@@ -32,7 +29,6 @@ public class CharacterDetailsActivity extends BaseActivity {
         if(getIntent() != null && getIntent().hasExtra(Constant.SELECTED_CHARACTER_POSITION)) {
             Bundle bundle = getIntent().getExtras();
             Result result = bundle.getParcelable(Constant.SELECTED_CHARACTER_POSITION);
-//            Log.e(mLOGTAG, Constant.SELECTED_CHARACTER_POSITION + " " + selectedItemPos);
 
             if(result != null) {
                 nameTextView.setText(result.getName());
@@ -47,7 +43,6 @@ public class CharacterDetailsActivity extends BaseActivity {
                             Date date = formatter.parse(createDate);
                             formatter = new SimpleDateFormat("dd/MM/yyyy");
                             String strDate= formatter.format(date);
-                            Log.e(mLOGTAG, " Created date is " + strDate);
                             createdTextView.setText(strDate);
                         }
 
